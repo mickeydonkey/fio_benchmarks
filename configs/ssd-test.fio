@@ -1,17 +1,17 @@
 [global]
 bs=4k
 ioengine=io_uring
-#sqthread_poll=1
-iodepth=8
-numjobs=5
-nrfiles=5
+sqthread_poll=1
+iodepth=1
+numjobs=3
+nrfiles=3
 size=4g
-#direct=1
+direct=1
 group_reporting=1
 runtime=60
-directory=/mnt/ramdisk
-filename=ssd.test.file
+directory=/mnt/optane
+#filename=/dev/nvme1n1
 
 [test]
 rw=randread
-
+rate_iops=10000
