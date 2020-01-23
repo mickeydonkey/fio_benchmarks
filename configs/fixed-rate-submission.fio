@@ -11,7 +11,7 @@ direct=1
 buffered=0
 
 group_reporting=1
-
+lat_percentiles=1
 filename=/dev/nvme1n1
 size=200g
 
