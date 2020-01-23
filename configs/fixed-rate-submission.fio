@@ -5,7 +5,7 @@ fixedbufs=1
 registerfiles=1
 sqthread_poll=0
 
-iodepth=32
+iodepth=8
 bs=4k
 direct=1
 buffered=0
