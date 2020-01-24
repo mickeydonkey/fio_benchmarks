@@ -1,0 +1,32 @@
+fixed-rate-submit: (g=0): rw=randread, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=io_uring, iodepth=10
+fio-3.17-90-gd9b7
+Starting 1 process
+
+fixed-rate-submit: (groupid=0, jobs=1): err= 0: pid=22179: Fri Jan 24 01:26:49 2020
+  read: IOPS=425k, BW=1659MiB/s (1740MB/s)(389GiB/240001msec)
+    clat (usec): min=6, max=16008, avg=29.79, stdev=204.58
+     lat (usec): min=8, max=16008, avg=29.84, stdev=204.70
+     lat percentiles (nsec):
+     | 50.0th=[21120], 90.0th=[24448], 99.0th=[36608]
+   bw (  MiB/s): min=  739, max= 1933, per=79.65%, avg=1321.45, stdev=201.14, samples=479
+   iops        : min=189339, max=495019, avg=338291.97, stdev=51492.47, samples=479
+  lat (usec)   : 10=0.01%, 20=34.48%, 50=64.92%, 100=0.41%, 250=0.01%
+  lat (usec)   : 500=0.01%, 750=0.01%, 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=0.18%, 20=0.01%
+  cpu          : usr=85.28%, sys=0.00%, ctx=9593, majf=0, minf=15
+  IO depths    : 1=0.0%, 2=0.0%, 4=0.0%, 8=83.3%, 16=16.7%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.1%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=101935214,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=16
+
+Run status group 0 (all jobs):
+   READ: bw=1659MiB/s (1740MB/s), 1659MiB/s-1659MiB/s (1740MB/s-1740MB/s), io=389GiB (418GB), run=240001-240001msec
+
+Disk stats (read/write):
+  nvme1n1: ios=126780539/0, merge=2606/0, ticks=2358657/0, in_queue=13508, util=97.17%
+
+CPU idleness:
+  system: 71.70%
+  percpu: 68.25%, 72.99%, 71.40%, 74.08%, 71.70%, 71.75%
+  unit work: mean=27.12us, stddev=0.03

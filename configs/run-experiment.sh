@@ -6,7 +6,7 @@ cd $SCRIPTPATH
 FIO_FILE="fixed-rate-submission.fio"
 
 PROCS=(1) # 2 3 4 5 6) # numjobs
-IO_DEPTH=(4)  # (1 2 4 6 8)
+IO_DEPTH=(1 2 4 6 8 10)
 IOPS=(100000 200000 300000 400000 500000 600000 700000)
 MODES=(polling blocking)
 
@@ -37,7 +37,7 @@ for MODE in ${MODES[@]}; do
 				sed -i "s/nrfiles=[0-9]*/nrfiles=$P/g" $FIO_FILE
 				sed -i "s/rate_iops=[0-9]*/rate_iops=$rate/g" $FIO_FILE
 
-			        sudo fio $FIO_FILE --output-format=json+ --output=$results # --idle-prof=percpu
+			        sudo fio $FIO_FILE --idle-prof=percpu > $results  2>&1
 			done
 		done
 		wait
